@@ -1,6 +1,5 @@
 const modalContainer = document.getElementById("modal-container");
 const modalOverlay = document.getElementById("modal-overlay");
-
 const cartBtn = document.getElementById("mis-compras");
 const cartBtn2 = document.getElementById("cart-btn");
 const cartCounter = document.getElementById("cart-counter");
@@ -9,7 +8,6 @@ const displayCart = () => {
     modalContainer.innerHTML = "";
     modalContainer.style.display = "block";
     modalOverlay.style.display = "block";
-
 
     //MODAL HEADER
     const modalHeader = document.createElement("div");
@@ -28,7 +26,6 @@ const displayCart = () => {
     modalTitle.innerText = "Mis compras:";
     modalTitle.className = "modal-title";
     modalHeader.append(modalTitle);
-
     modalContainer.append(modalHeader);
 
     // MODAL BODY
@@ -61,7 +58,6 @@ const displayCart = () => {
             }
             displayCartCounter();
         })
-
         const increse = modalBody.querySelector(".quantity-btn-increse");
         increse.addEventListener("click", () =>{
             product.quanty++;
@@ -79,17 +75,75 @@ const displayCart = () => {
     });
 
     //MODAL FOOTER
-
     const total = cart.reduce((acc, el) => acc + el.price * el.quanty, 0);
 
     const modalFooter = document.createElement("div");
     modalFooter.className = "modal-footer"
     modalFooter.innerHTML = `
-    <div class="total-price">Total: $ ${total}</div>
-
+    <div class = "total-price">Total: ${total}</div>
+    <button class="btn-primary" id="checkout-btn"> go to checkout</button>
+    <div id="button-checkout"></div>
     `;
     modalContainer.append(modalFooter);
 
+    // mp;
+    const mp = new MercadoPago("TEST-fb1b0a44-bfe1-4d95-8325-015e88c7af0b", {
+        locale: "es-AR", //
+    });
+
+    const checkoutButton = modalFooter.querySelector("#checkout-btn");
+
+
+    checkoutButton.addEventListener("click", function() {
+        
+        checkoutButton.remove();
+
+        const orderData = {
+            quantity: 1,
+            description: "compra de ecommerce",
+            price: total,
+        };
+
+        fetch("/create_preference", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(orderData),
+        })
+            .then(function (response) {
+            return response.json;
+            })
+            .then(function(preference) {
+            createCheckoutButton(preference.id);
+            })
+            .catch(function() {
+            alert("Unexpected error");
+            });
+    });
+
+    function createCheckoutButton(preferenceId) {
+        // Inicializa el checkout
+        const bricksBuilder = mp.bricks();
+
+    const renderComponent = async (bricksBuilder) => {
+        if (window.checkoutButton) window.checkoutButton.unmount();
+        await bricksBuilder.create(
+            'wallet',
+            'button-checkout', // class/id where the payment button will be displayed
+            {
+                initialization: {
+                preferenceId: "<preferenceId>",
+                },
+                    callbacks: {
+                        onReady: () => {},
+                        onError: (error) => console.error(error),
+                    },
+                }
+             );
+        };
+        window.checkoutButton = renderComponent(bricksBuilder);
+    }
     } else {
         const modalText = document.createElement("h2");
         modalText.className = "modal-body";
