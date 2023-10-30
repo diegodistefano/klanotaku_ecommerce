@@ -9,7 +9,8 @@ mercadopago.configure({
 	access_token: "<TEST-7950480841956488-103016-976e9c934728058a580a30254a62beb6-165463103>",
 });
 
-// codigo extra agregago 
+
+// PATH
 app.use("/client/js", express.static(path.join(__dirname, "../client/js"), {
 	setHeaders: (res) => {
 	  res.setHeader("Content-Type", "text/javascript");
@@ -22,20 +23,21 @@ app.use("/client/media", express.static(path.join(__dirname, "../client/media"),
 	},
 }));
 
-
-
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../client/media")));
 app.use(cors());
 
+
+// GET
 app.get("/", function () {
 	(path.resolve(__dirname,  "../client/media/index.html"));
 	res.send("El servidor de MP funciona");
 });
 
 
+// POST
 app.post("http://localhost:8080/create_preference", (req, res) => {
 
 	let preference = {
