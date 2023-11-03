@@ -6,39 +6,19 @@ const path = require("path");
 
 // REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel
 mercadopago.configure({
-	access_token: "<TEST-7950480841956488-103016-976e9c934728058a580a30254a62beb6-165463103>",
+	access_token: "TEST-7950480841956488-103016-976e9c934728058a580a30254a62beb6-165463103",
 });
 
-
-// PATH
-app.use("/client/js", express.static(path.join(__dirname, "../client/js"), {
-	setHeaders: (res) => {
-	  res.setHeader("Content-Type", "text/javascript");
-	},
-}));
-
-app.use("/client/media", express.static(path.join(__dirname, "../client/media"), {
-	setHeaders: (res) => {
-	  res.setHeader("Content-Type", "text/javascript");
-	},
-}));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
-app.use(express.static(path.join(__dirname, "../client/media")));
+app.use(express.static(path.join(__dirname, "../client")));
 app.use(cors());
-
-
-// GET
-app.get("/", function () {
-	(path.resolve(__dirname,  "../client/media/index.html"));
-	res.send("El servidor de MP funciona");
+app.get("/", function (req, res) {
+	path.resolve(__dirname, "../client/index.html");
 });
 
-
-// POST
-app.post("http://localhost:8080/create_preference", (req, res) => {
+app.post("/create_preference", (req, res) => {
 
 	let preference = {
 		items: [
@@ -51,7 +31,7 @@ app.post("http://localhost:8080/create_preference", (req, res) => {
 		back_urls: {
 			"success": "http://localhost:8080",
 			"failure": "http://localhost:8080",
-			"pending": "",
+			"pending": ""
 		},
 		auto_return: "approved",
 	};

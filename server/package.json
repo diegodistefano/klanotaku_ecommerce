@@ -10,10 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mercadopago/sdk-js": "^0.0.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "mercadopago": "^1.5.17",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7"
   }
 }
