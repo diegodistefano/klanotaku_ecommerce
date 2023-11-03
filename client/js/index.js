@@ -1,5 +1,7 @@
 const shopContent = document.getElementById("shopContent");
-const cart = [];
+
+
+const cart = JSON.parse(localStorage.getItem("cart")) || []; //Get item ... Convierte el string del LocalStorage a Array nuevamente
 
 productos.forEach((product) =>{
     const content = document.createElement("div");
@@ -36,6 +38,15 @@ productos.forEach((product) =>{
                 img: product.img,
           });  
           displayCartCounter();
+          saveLocal();
         }
     });
 });
+
+
+//LOCAL STORAGE
+
+//set item
+const saveLocal = () => {
+  localStorage.setItem("cart", JSON.stringify(cart)); //localstorage solo recibe Strings, y el cart es un array, por eso necesita stringify
+};
