@@ -39,10 +39,11 @@ header {
 }
 
 .card{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    box-shadow: 0px 0px 10px rgb(25, 25, 25);
     flex-grow: 50%;
     padding: 0.5rem;
     margin: 1rem;
+    border-radius: 1rem;
 }
 
 .card-products button {
@@ -56,6 +57,7 @@ header {
     cursor: pointer;
     width: 100%;
     font-size: 15px;
+    border-radius: 1rem;
 }
 
 .card-products button:hover {
@@ -67,17 +69,16 @@ header {
     position: fixed;
     top: 70vh;
     right:40px;
-    background-color:rgb(25, 25, 25);
     padding: 10px;
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
     transition: transform 0.2s ease-in-out;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .cart-btn:hover {
     cursor: pointer;
     opacity: 0.9;
+    font-size: 10rem;
 }
 
 .modal-close{
@@ -122,13 +123,15 @@ header {
 .modal-container {
     display: none;
     background-color: #ffffff;
-    box-shadow: 0px 3px 6px #00000029;
+    /* box-shadow: 0px 3px 6px #00000029; */
+    box-shadow: 0px 0px 10px rgb(49, 49, 49);
     padding: 40px;
-    position: absolute;
+    margin: 10px 0px;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
     z-index: 1;
     max-height: 80vh;
@@ -165,20 +168,27 @@ header {
 
 .product-img {
     height: 80px;
-    margin-right: 20px;
     width: 80px;
+    margin: 0 5px;
+    align-items: start;
 }
 
 .product-info h4 {
     margin-top: 35px;
 }
+
+.product-info {
+    width: 80px;
+    align-items: start;
+}
  
 .quantity {
+    width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 10px;
-    margin-right: 4em;
+    text-align: center;
 }
 
 .quantity-btn-decrese,
@@ -198,26 +208,19 @@ header {
     width: 50px;
     font-weight: bold;
 }
-@media only screen and (max-width: 500px) {
-    .product-img{
-        display: none;
-    }
-    .modal-body {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-}
 
 .price {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
+    width: 100px;
+    text-align: end;
 }
 
 .delete-product {
     margin-top: 20px;
-    margin-left: 2em;
     cursor: pointer;
+    text-align: end;
 }
 
 .modal-footer {
@@ -225,23 +228,44 @@ header {
 }
 
 .total-price {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 10px;
+    border: none;
+    outline: 0;
+    padding: 10px;
+    color: white;
+    background-color: #CD0002;
+    text-align: center;
+    border-radius: 1rem;
 }
 
-.btn-primary {
+#button-checkout .btn-primary {
+    width: 100%;
     background-color: #007bff;
     border-color: #007bff;
+    text-align: center;
+    border-radius: 1rem;
     color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 10px 16px;
-    text-transform: uppercase;
+    font-size: 30px;
     transition: background-color 0.3s ease;
     cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    outline: 0;
+    padding: 10px;
 }
+
+/* .btn-primary {
+    background-color: #007bff;
+    border: none;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+} */
 
 .btn-primary:hover {
     background-color: #0069d9;
@@ -266,7 +290,7 @@ header {
 }
 
 .imagen-header img{
-    height: 10vh;
+    height: 30vh;
 }
 
 .barra{
@@ -383,11 +407,11 @@ h2{
     width:50%;
 }
 
-.compra-cuotas {
+/* .compra-cuotas {
     text-align: center;
-}
+} */
 
-.camionenvio {
+/* .camionenvio {
     color: #CD0002;
     display: block;
     border-radius: 50%;
@@ -404,7 +428,7 @@ h2{
 }
 .camionenvio:hover{
     transform:rotate(-90deg);
-}
+} */
 
 
 .producto 
@@ -453,15 +477,31 @@ footer{
 
 
 /* mobile */
-@media (max-width: 361px) {
+@media only screen and (max-width: 500px) {
+    .modal-container {
+        margin: 0;
+        padding: 20px 0px;
+    }
     .descripcion{
         display:none;
+    }
+    .product-img{
+        display: none;
+    }
+    .price {
+        font-size: 15px;
+        width: 75px;
+        text-align: end;
+    }
+    .delete-product {
+        align-items: start;
+        width: 10px;
     }
 }
 
 
 /* tablet */
-@media (min-width: 361px) {
+@media (min-width: 501px) {
     .producto{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
         flex-grow: 50%;

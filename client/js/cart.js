@@ -23,7 +23,7 @@ const displayCart = () => {
   });
 
   const modalTitle = document.createElement("div");
-  modalTitle.innerText = "Cart";
+  modalTitle.innerText = "CARRITO DE COMPRAS";
   modalTitle.className = "modal-title";
   modalHeader.append(modalTitle);
 
@@ -45,7 +45,7 @@ const displayCart = () => {
             <span class="quantity-input">${product.quanty}</span>
             <span class="quantity-btn-increse">+</span>
         </div>
-        <div class="price">${product.price * product.quanty} $</div>
+        <div class="price">$ ${product.price * product.quanty}.-</div>
         <div class="delete-product">❌</div>
     </div>
         `;
@@ -81,9 +81,8 @@ const displayCart = () => {
     const modalFooter = document.createElement("div");
     modalFooter.className = "modal-footer";
     modalFooter.innerHTML = `
-    <div class="total-price">Total:${total} $</div>
-    <button class="btn-primary" id= "checkout-btn">Checkout</button>
-    <div id="button-checkout"></div>
+    <div class="total-price">Total: $ ${total}.-</div>
+    <div id="button-checkout"><button class="btn-primary" id= "checkout-btn">COMPRAR</button></div>
     `;
     modalContainer.append(modalFooter);
     //mp;
@@ -101,7 +100,7 @@ const displayCart = () => {
         price: total,
       };
 
-      fetch("http://localhost:8080/create_preference", {
+      fetch("http://localhost:8016/create_preference", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
