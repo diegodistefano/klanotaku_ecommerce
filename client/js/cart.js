@@ -64,10 +64,13 @@ const displayCart = () => {
         displayCart();
         displayCartCounter();
       });
+
+      // ELIMINAR PRODUCTO
       const deleteProduct = modalBody.querySelector(".delete-product");
       deleteProduct.addEventListener("click", () => {
         const index = cart.findIndex((prod) => prod.id === product.id);
         cart.splice(index, 1);
+        saveLocal();
         displayCart();
         displayCartCounter();
       });
@@ -145,8 +148,11 @@ const displayCartCounter = () => {
   const cartLength = cart.reduce((acc, el) => acc + el.quanty, 0);
   if (cartLength > 0) {
     cartCounter.style.display = "block";
-    cartCounter.innerText = cartLength;
+    localStorage.setItem("cartLength", JSON.stringify(cartLength))
+    cartCounter.innerText = JSON.parse(localStorage.getItem("cartLength"));
   } else {
     cartCounter.style.display = "none";
   }
 };
+
+displayCartCounter();
