@@ -9,6 +9,16 @@ body {
     font-size: 16px;
 }
 
+
+/*  ----------------------   HEADER   -------------------------  */
+/*  ----------------------   HEADER   -------------------------  */
+/*  ----------------------   HEADER   -------------------------  */
+/*  ----------------------   HEADER   -------------------------  */
+
+h1{
+    display: none;
+}
+
 header {
     background-color: #ffffff;
     width: 100%;
@@ -18,8 +28,144 @@ header {
     flex-direction: column;
 
 }
+.renglon {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
 
-/*products styles*/
+.imagen-header img{
+    height: 30vh;
+}
+
+.barra{
+    display: flex;
+    gap: 1rem;
+}
+
+.barra input{
+    border-radius: 10px;
+    height: 5vh;
+    border: 1px solid black;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+
+/*  ----------------------   NAVBAR   -------------------------  */
+
+.navbar a:hover{
+    background-color: black;
+    border-radius: 50% 20% / 10% 40%;
+    padding: 0.5rem;
+    /* color: #CD0002; */
+    font-weight: bolder;
+
+}
+
+.navbar {
+    background-color: #CD0002;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #ebebeb;
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ebebeb;
+}
+
+.burger {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fas {
+    color: #fff;
+    font-size: 20px;
+    background-color: #CD0002;
+    padding: 10px 12px;
+    margin: -10px;
+    border-radius: 10%;
+    text-align: center;
+}
+
+/*  ----------------------   SLIDE DE IMAGENES    -------------------------  */
+.slider {
+    width: 75vw;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+.slider .slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(200px * 14);
+}
+.slider .slide {
+    width: 200px;
+}
+/* .slider .slide img {
+    width: 100%;
+} */
+.slide h2{
+    size:24px;
+    margin: 15px 2px;
+    text-align: center;
+}
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-200px * 7));
+        transform: translateX(calc(-200px * 7));
+    }
+}
+
+
+
+
+/*  ----------------------   PRODUCTOS (CARDS)   -------------------------  */
+/*  ----------------------   PRODUCTOS (CARDS)   -------------------------  */
+/*  ----------------------   PRODUCTOS (CARDS)   -------------------------  */
+/*  ----------------------   PRODUCTOS (CARDS)   -------------------------  */
+
+
+
+main 
+{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.descripcion{
+    size: 16px;
+} 
+
+.descuentos{
+    size: 16px;
+    width:40%;
+    color: #CD0002;
+}
+
+.precio {
+    size: 18px;
+    width:50%;
+}
+
 .card-products-container {
     margin: 5vh auto;
 }
@@ -64,7 +210,66 @@ header {
     opacity: 0.7;
 }
 
-/*card button*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .compra-cuotas {
+    text-align: center;
+} */
+
+/* .camionenvio {
+    color: #CD0002;
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    border-color: #CD0002;
+    border: #CD0002 solid 1px;
+    padding: 5px;
+    position: absolute;
+    right: 20px;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+
+}
+.camionenvio:hover{
+    transform:rotate(-90deg);
+} */
+
+
+.producto 
+{
+    margin: 15px;
+    width: 95%;
+}
+
+.detalles
+{
+    border-top: solid 1px #ebebeb;
+    border-left: 15px;
+    border-right: 15px;
+    position: relative;
+    
+}
+
+
+
+/*  ----------------------   BOTON CARRITO    -------------------------  */
+/*  ----------------------   BOTON CARRITO    -------------------------  */
+/*  ----------------------   BOTON CARRITO    -------------------------  */
+/*  ----------------------   BOTON CARRITO    -------------------------  */
 .cart-btn {
     position: fixed;
     top: 70vh;
@@ -92,7 +297,7 @@ header {
     opacity: 0.9;
 }
 
-/*counter*/
+/*  ----------------------   CONTADOR CARRITO    -------------------------  */
 .cart-counter {
    /* display: none; */
     position: fixed;
@@ -109,7 +314,47 @@ header {
     font-size: 15px;
 }
 
-/*modal*/
+
+
+/*  ----------------------   FOOTER    -------------------------  */
+/*  ----------------------   FOOTER    -------------------------  */
+/*  ----------------------   FOOTER    -------------------------  */
+/*  ----------------------   FOOTER    -------------------------  */
+
+.fa-user-shield, .fa-gift, .fa-credit-card 
+{
+    color: #ebebeb;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.fa-magnifying-glass
+{
+    color: black;
+    font-size: 2em;
+}
+
+footer{
+    background-color: #CD0002;
+    color: #ebebeb;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.items-footer 
+{
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 16px;  
+}
+
+
+
+/*  ----------------------   MODAL    -------------------------  */
+/*  ----------------------   MODAL    -------------------------  */
+/*  ----------------------   MODAL    -------------------------  */
+/*  ----------------------   MODAL    -------------------------  */
 .modal-overlay {
     display: none;
     background-color: rgba(0, 0, 0, 0.5);
@@ -137,7 +382,6 @@ header {
     max-height: 80vh;
     overflow-y: auto;  
 }
-
 .modal-container::-webkit-scrollbar{
     display: none;
 }
@@ -153,7 +397,7 @@ header {
     text-align: center;
 }
 
-/*modal-body*/
+/*  ----------------------   MODAL BODY    -------------------------  */
 .modal-body {
     margin-bottom: 20px;
     text-align: center;
@@ -223,6 +467,8 @@ header {
     text-align: end;
 }
 
+
+/*  ----------------------   MODAL FOOTER    -------------------------  */
 .modal-footer {
     text-align: center;
 }
@@ -240,7 +486,6 @@ header {
     text-align: center;
     border-radius: 1rem;
 }
-
 #button-checkout .btn-primary {
     width: 100%;
     background-color: #007bff;
@@ -256,7 +501,6 @@ header {
     outline: 0;
     padding: 10px;
 }
-
 /* .btn-primary {
     background-color: #007bff;
     border: none;
@@ -266,12 +510,10 @@ header {
     font-weight: bold;
     cursor: pointer;
 } */
-
 .btn-primary:hover {
     background-color: #0069d9;
     border-color: #0062cc;
 }
-
 #button-checkout {
     z-index: 10;
 }
@@ -280,201 +522,10 @@ header {
 
 
 
-
-/* MAQUETADO */
-
-.renglon {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.imagen-header img{
-    height: 30vh;
-}
-
-.barra{
-    display: flex;
-    gap: 1rem;
-}
-
-.barra input{
-    border-radius: 10px;
-    height: 5vh;
-    border: 1px solid black;
-    font-size: 1rem;
-    padding: 1rem;
-}
-
-div.navbar {
-    background-color: #CD0002;
-    width: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    color: #ebebeb;
-    
-}
-
-ul {
-    list-style: none;
-    margin: 10px 0;
-    padding: 0;
-
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #ebebeb;
-}
-
-.burger {
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.fas {
-    color: #fff;
-    font-size: 20px;
-    background-color: #CD0002;
-    padding: 10px 12px;
-    margin: -10px;
-    border-radius: 10%;
-    text-align: center;
-}
-
-main 
-{
-    text-align: center;
-    width: 90%;
-    margin: auto;
-}
-
-
-.slider {
-    width: 75vw;
-    height: auto;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slider .slide-track {
-    display: flex;
-    animation: scroll 40s linear infinite;
-    -webkit-animation: scroll 40s linear infinite;
-    width: calc(200px * 14);
-}
-
-.slider .slide {
-    width: 200px;
-}
-
-/* .slider .slide img {
-    width: 100%;
-} */
-
-@keyframes scroll {
-    0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-    }
-    100% {
-        -webkit-transform: translateX(calc(-200px * 7));
-        transform: translateX(calc(-200px * 7));
-    }
-}
-
-
-
-h2{
-    size:24px;
-    margin: 15px 2px;
-    text-align: center;
-}
-
-.descripcion{
-    size: 16px;
-} 
-
-.descuentos{
-    size: 16px;
-    width:40%;
-    color: #CD0002;
-}
-
-.precio {
-    size: 18px;
-    width:50%;
-}
-
-/* .compra-cuotas {
-    text-align: center;
-} */
-
-/* .camionenvio {
-    color: #CD0002;
-    display: block;
-    border-radius: 50%;
-    background-color: #fff;
-    border-color: #CD0002;
-    border: #CD0002 solid 1px;
-    padding: 5px;
-    position: absolute;
-    right: 20px;
-    font-size: 16px;
-    width: 30px;
-    height: 30px;
-
-}
-.camionenvio:hover{
-    transform:rotate(-90deg);
-} */
-
-
-.producto 
-{
-    margin: 15px;
-    width: 95%;
-}
-
-.detalles
-{
-    border-top: solid 1px #ebebeb;
-    border-left: 15px;
-    border-right: 15px;
-    position: relative;
-    
-}
-
-.fa-user-shield, .fa-gift, .fa-credit-card 
-{
-    color: #ebebeb;
-    font-size: 2em;
-    margin-bottom: 20px;
-    margin-top: 30px;
-}
-
-.fa-magnifying-glass
-{
-    color: black;
-    font-size: 2em;
-}
-
-footer{
-    background-color: #CD0002;
-    color: #ebebeb;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-.items-footer 
-{
-    text-align: center;
-    font-family: 'Roboto';
-    font-size: 16px;  
-}
-
-
+/*  ----------------------   MEDIA QUERIES    -------------------------  */
+/*  ----------------------   MEDIA QUERIES    -------------------------  */
+/*  ----------------------   MEDIA QUERIES    -------------------------  */
+/*  ----------------------   MEDIA QUERIES    -------------------------  */
 
 /* mobile */
 @media only screen and (max-width: 500px) {
@@ -497,11 +548,28 @@ footer{
         align-items: start;
         width: 10px;
     }
+
+    div.navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 150px;
+        border-radius: 0 0 1rem 1rem;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
 }
 
 
 /* tablet */
-@media (min-width: 501px) {
+@media only screen and (min-width: 501px) and (max-width: 1023px) {
     .producto{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
         flex-grow: 50%;
@@ -511,38 +579,13 @@ footer{
     }  
 }
 
-
-
 /* desktop */
-@media (min-width: 769px) 
+@media only screen and (min-width: 1024px) 
 {   
+    
+    
 
-    div.navbar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    ul {
-        display: flex;
-        flex-direction: row;
-        padding: 1rem;
-        gap: 1rem;
-    }
 
-    .navbar a:hover{
-        background-color: black;
-        border-radius: 50% 20% / 10% 40%;
-        padding: 0.5rem;
-        /* color: #CD0002; */
-        font-weight: bolder;
-    
-    }
-    
-    .navbar a {
-        text-decoration: none;
-        color: #ebebeb;
-    }
 
 
 
